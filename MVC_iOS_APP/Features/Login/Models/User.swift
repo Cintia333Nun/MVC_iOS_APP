@@ -12,3 +12,21 @@ struct User {
     let password: String
     let phone: String
 }
+
+// MARK: LOGIN SERVICE MODELS
+struct LoginRequest: Encodable {
+    let username: String
+    let password: String
+}
+
+struct LoginResponse: Codable {
+    let isSuccess: Bool
+    let status: Int
+    let message: String
+    let data: UserData
+    
+    struct UserData: Codable {
+        let username: String
+        let accessToken: String
+    }
+}

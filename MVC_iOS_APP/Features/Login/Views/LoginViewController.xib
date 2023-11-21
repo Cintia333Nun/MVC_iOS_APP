@@ -81,7 +81,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.14509803921568626" green="0.15294117647058825" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="backGround"/>
             <constraints>
                 <constraint firstItem="h6j-1L-WfQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Adi-bv-khB"/>
                 <constraint firstItem="oki-4m-99H" firstAttribute="top" secondItem="h6j-1L-WfQ" secondAttribute="bottom" constant="35" id="BvA-7i-RrE"/>
@@ -96,8 +96,11 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="backGround">
+            <color red="0.14509803921568626" green="0.15294117647058825" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primaryColor">
-            <color red="0.93333333333333335" green="0.22745098039215686" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93300002813339233" green="0.22699999809265137" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
