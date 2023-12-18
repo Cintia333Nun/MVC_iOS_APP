@@ -27,7 +27,7 @@ class APILogin {
     /// - Parameter email: User's email for the session query in the request body.
     /// - Parameter password: User's password for the session query in the request body.
     /// - Parameter completion: Closure designed to simplify displaying the query result in the UI, showing success or failure.
-    func getServiceLogin(email: String, password: String, completion: @escaping (Result<LoginResponse, APIError>) -> Void) {
+    func getServiceLogin(email: String, password: String, completion: @escaping (Result<Bool, APIError>) -> Void) {
         if let url = URL(string: "\(END_POINT_API)login") {
             let loginRequest = LoginRequest(username: email, password: password)
             
@@ -43,7 +43,8 @@ class APILogin {
                     case .success(let data):
                         do {
                             let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-                            completion(.success(loginResponse))
+                            self.saveUserData(userData: loginResponse)
+                            completion(.success(true))
                         } catch {
                             completion(.failure(.invalidData))
                         }
@@ -57,5 +58,11 @@ class APILogin {
         } else {
             completion(.failure(.invalidURL))
         }
+    }
+    
+    private func saveUserData(userData: LoginResponse) {
+        let clientDefaults = ClientDefaults.shared
+        clientDefaults.setUserName(with: userData.data.username)
+        clientDefaults.setAccessToken(with: userData.data.accessToken)
     }
 }

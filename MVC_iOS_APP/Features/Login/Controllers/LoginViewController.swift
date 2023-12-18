@@ -11,11 +11,13 @@ class LoginViewController: MainViewController {
     // MARK: UI Objects
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    private let clientDefaults = ClientDefaults.shared
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomizeTextFields()
+        checkExistSession()
     }
 
     // MARK: Buttons events
@@ -78,19 +80,17 @@ class LoginViewController: MainViewController {
         APILogin().getServiceLogin(email: user, password: password) { result in
             DispatchQueue.main.sync {
                 switch result {
-                case .success(let loginResponse): self.successResponse(loginResponse: loginResponse)
+                case .success(let statusLogin): self.successResponse(statusLogin: statusLogin)
                 case .failure(let error): self.errorResponse(error: error)
                 }
             }
         }
     }
     
-    private func successResponse(loginResponse: LoginResponse) {
-        self.createSimpleAlert(
-            title: "Success Response",
-            message: "Token: \(loginResponse.data.accessToken)",
-            buttonText: "Ok"
-        )
+    private func successResponse(statusLogin: Bool) {
+        if(statusLogin) {
+            goToMovies()
+        }
     }
     
     private func errorResponse(error: APIError) {
@@ -116,5 +116,20 @@ class LoginViewController: MainViewController {
         passwordTextField.setBorderAndColor()
         passwordTextField.setPlaceHolder(textPlaceHolder: "Password")
         passwordTextField.addPadding()
+    }
+    
+    private func checkExistSession() {
+        let userToken = clientDefaults.getToken
+        if (userToken == "") {
+            goToMovies()
+            print("El usuario ya inicio sesión antes")
+        }
+    }
+    
+    private func goToMovies() {
+        let moviesViewController = MoviesViewController()
+        moviesViewController.modalPresentationStyle = .fullScreen
+        moviesViewController.isModalInPresentation = true
+        present(moviesViewController, animated: true, completion: nil)
     }
 }

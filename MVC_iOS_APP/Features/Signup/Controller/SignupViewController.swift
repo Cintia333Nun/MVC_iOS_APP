@@ -178,19 +178,21 @@ class SignupViewController: MainViewController {
         APILogin().getServiceLogin(email: user, password: password) { result in
             DispatchQueue.main.sync {
                 switch result {
-                case .success(let loginResponse): self.successResponse(loginResponse: loginResponse)
+                case .success(let isOk): self.successResponse(isOk: isOk)
                 case .failure(let error): self.errorResponse(error: error)
                 }
             }
         }
     }
     
-    private func successResponse(loginResponse: LoginResponse) {
-        self.createSimpleAlert(
-            title: "Success Response",
-            message: "Token: \(loginResponse.data.accessToken)",
-            buttonText: "Ok"
-        )
+    private func successResponse(isOk: Bool) {
+        if(isOk) {
+            self.createSimpleAlert(
+                title: "Success",
+                message: "Registered user!",
+                buttonText: "Ok"
+            )
+        }
     }
     
     private func errorResponse(error: APIError) {
