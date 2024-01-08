@@ -29,15 +29,9 @@ class APILogin {
     /// - Parameter completion: Closure designed to simplify displaying the query result in the UI, showing success or failure.
     func getServiceLogin(email: String, password: String, completion: @escaping (Result<Bool, APIError>) -> Void) {
         if let url = URL(string: "\(END_POINT_API)login") {
-            let loginRequest = LoginRequest(username: email, password: password)
-            
             do {
+                let loginRequest = LoginRequest(username: email, password: password)
                 let jsonData = try JSONEncoder().encode(loginRequest)
-                var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                request.allHTTPHeaderFields = headers
-                request.httpBody = jsonData
-                
                 apiClient.executeService(request: HTTPRequest(url: url, method: .POST, body: jsonData, headers: headers)) { result in
                     switch result {
                     case .success(let data):

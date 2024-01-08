@@ -15,6 +15,7 @@
 		084408C02B2FDEEA0095BB38 /* DataMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084408BE2B2FDEEA0095BB38 /* DataMovieViewController.swift */; };
 		084408C12B2FDEEA0095BB38 /* DataMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 084408BF2B2FDEEA0095BB38 /* DataMovieViewController.xib */; };
 		084FFEA72B1D56B800D29D05 /* ClientDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FFEA62B1D56B800D29D05 /* ClientDefaults.swift */; };
+		086B4EAB2B43C22700417DF4 /* APIMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B4EAA2B43C22600417DF4 /* APIMovie.swift */; };
 		087584AE2B07DCE2005BD187 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087584AD2B07DCE2005BD187 /* User.swift */; };
 		087584B12B07DEB2005BD187 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087584AF2B07DEB2005BD187 /* LoginViewController.swift */; };
 		087584B22B07DEB2005BD187 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087584B02B07DEB2005BD187 /* LoginViewController.xib */; };
@@ -42,6 +43,7 @@
 		084408BE2B2FDEEA0095BB38 /* DataMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMovieViewController.swift; sourceTree = "<group>"; };
 		084408BF2B2FDEEA0095BB38 /* DataMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataMovieViewController.xib; sourceTree = "<group>"; };
 		084FFEA62B1D56B800D29D05 /* ClientDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDefaults.swift; sourceTree = "<group>"; };
+		086B4EAA2B43C22600417DF4 /* APIMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMovie.swift; sourceTree = "<group>"; };
 		087584AD2B07DCE2005BD187 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		087584AF2B07DEB2005BD187 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		087584B02B07DEB2005BD187 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		087A6FD22B097AB100D7C01C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				086B4EAA2B43C22600417DF4 /* APIMovie.swift */,
 				087A6FD52B097B4A00D7C01C /* APIClient.swift */,
 				087A6FDA2B09838800D7C01C /* APILogin.swift */,
 			);
@@ -335,6 +338,7 @@
 				088D43952B053F16008112E4 /* AppDelegate.swift in Sources */,
 				087A6FD12B09774F00D7C01C /* Helpers+Alerts.swift in Sources */,
 				087A6FD62B097B4A00D7C01C /* APIClient.swift in Sources */,
+				086B4EAB2B43C22700417DF4 /* APIMovie.swift in Sources */,
 				08B94B992B0AE18D00C0B6EA /* MainViewController.swift in Sources */,
 				087584B72B082224005BD187 /* Helpers+TextField.swift in Sources */,
 				087584B12B07DEB2005BD187 /* LoginViewController.swift in Sources */,

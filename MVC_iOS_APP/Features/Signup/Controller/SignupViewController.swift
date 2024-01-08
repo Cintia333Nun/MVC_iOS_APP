@@ -178,14 +178,14 @@ class SignupViewController: MainViewController {
         APILogin().getServiceLogin(email: user, password: password) { result in
             DispatchQueue.main.sync {
                 switch result {
-                case .success(let isOk): self.successResponse(isOk: isOk)
-                case .failure(let error): self.errorResponse(error: error)
+                case .success(let isOk): self.successResponse(isOk)
+                case .failure(let error): self.errorResponse(error)
                 }
             }
         }
     }
     
-    private func successResponse(isOk: Bool) {
+    private func successResponse(_ isOk: Bool) {
         if(isOk) {
             self.createSimpleAlert(
                 title: "Success",
@@ -195,7 +195,7 @@ class SignupViewController: MainViewController {
         }
     }
     
-    private func errorResponse(error: APIError) {
+    private func errorResponse(_ error: APIError) {
         self.createSimpleAlert(
             title: "Error Response",
             message: "Description: \(error.localizedDescription)",
