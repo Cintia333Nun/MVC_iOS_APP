@@ -31,6 +31,7 @@
 		088D43992B053F16008112E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D43982B053F16008112E4 /* ViewController.swift */; };
 		088D439E2B053F17008112E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088D439D2B053F17008112E4 /* Assets.xcassets */; };
 		088D43A12B053F17008112E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088D439F2B053F17008112E4 /* LaunchScreen.storyboard */; };
+		089A668B2B5E0C9600996B9A /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089A668A2B5E0C9600996B9A /* ImageCacheManager.swift */; };
 		08B94B992B0AE18D00C0B6EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B94B982B0AE18D00C0B6EA /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		088D439D2B053F17008112E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088D43A02B053F17008112E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		088D43A22B053F17008112E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		089A668A2B5E0C9600996B9A /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		08B94B982B0AE18D00C0B6EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				087584B42B082211005BD187 /* Helpers+Colors.swift */,
 				087584B62B082224005BD187 /* Helpers+TextField.swift */,
 				087A6FD02B09774F00D7C01C /* Helpers+Alerts.swift */,
+				089A668A2B5E0C9600996B9A /* ImageCacheManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				086B4EAB2B43C22700417DF4 /* APIMovie.swift in Sources */,
 				08B94B992B0AE18D00C0B6EA /* MainViewController.swift in Sources */,
 				087584B72B082224005BD187 /* Helpers+TextField.swift in Sources */,
+				089A668B2B5E0C9600996B9A /* ImageCacheManager.swift in Sources */,
 				087584B12B07DEB2005BD187 /* LoginViewController.swift in Sources */,
 				084408C02B2FDEEA0095BB38 /* DataMovieViewController.swift in Sources */,
 				088D43972B053F16008112E4 /* SceneDelegate.swift in Sources */,

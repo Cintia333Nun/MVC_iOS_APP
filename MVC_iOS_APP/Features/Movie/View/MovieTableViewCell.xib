@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z7-OP-ES1">
-                        <rect key="frame" x="108" y="58" width="299" height="150"/>
+                        <rect key="frame" x="108" y="58" width="1685" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXr-Uj-8iH">
-                                <rect key="frame" x="76" y="0.0" width="223" height="150"/>
+                                <rect key="frame" x="76" y="0.0" width="1609" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" name="placeholder"/>
                                 <nil key="highlightedColor"/>
@@ -40,8 +40,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coco" translatesAutoresizingMaskIntoConstraints="NO" id="zfR-54-Q1c">
-                        <rect key="frame" x="20" y="17" width="159" height="216"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="zfR-54-Q1c">
+                        <rect key="frame" x="20" y="17" width="896" height="216"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="159" id="0kg-MR-s1Z"/>
                             <constraint firstAttribute="height" constant="216" id="tuU-PP-2Hv"/>
@@ -77,7 +77,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="coco" width="540" height="810"/>
+        <image name="movie" width="896" height="1024"/>
         <namedColor name="backBroundLight">
             <color red="0.164000004529953" green="0.19499999284744263" blue="0.28799998760223389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

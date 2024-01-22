@@ -59,26 +59,28 @@ class APIMovie {
     func getMovies(completion: @escaping (Result<Array<MovieModel>, APIError>) -> Void) {
         if let url = URL(string: "\(END_POINT_API)titles") {
             apiClient.executeService(request: HTTPRequest(url: url, method: .GET, body: nil, headers: headers)) { result in
-                switch result {
-                case .success(let data):
-                    do {
-                        let moviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: data)
-                        print("Movies response: \(moviesResponse)")
-                        let arrayMovies = moviesResponse.results.map { data in
-                            MovieModel(
-                                urlImage: data.primaryImage?.url, title: data.titleText?.text, 
-                                titleType: data.titleType.text, titleOriginal: data.originalTitleText?.text,
-                                image: nil,
-                                releaseYear: String(data.releaseYear?.year ?? 0),
-                                releaseDate: self.getReleaseDate(data.releaseDate)
-                            )
+                DispatchQueue.main.sync {
+                    switch result {
+                    case .success(let data):
+                        do {
+                            let moviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: data)
+                            print("Movies response: \(moviesResponse)")
+                            let arrayMovies = moviesResponse.results.map { data in
+                                MovieModel(
+                                    urlImage: data.primaryImage?.url, title: data.titleText?.text,
+                                    titleType: data.titleType.text, titleOriginal: data.originalTitleText?.text,
+                                    image: nil,
+                                    releaseYear: String(data.releaseYear?.year ?? 0),
+                                    releaseDate: self.getReleaseDate(data.releaseDate)
+                                )
+                            }
+                            completion(.success(arrayMovies))
+                        } catch {
+                            completion(.failure(.invalidResponse))
                         }
-                        completion(.success(arrayMovies))
-                    } catch {
-                        completion(.failure(.invalidResponse))
+                    case .failure(let error):
+                        completion(.failure(error))
                     }
-                case .failure(let error):
-                    completion(.failure(error))
                 }
             }
         } else {
@@ -97,15 +99,17 @@ class APIMovie {
     func getImageFromUrlOrDefault(_ url: String, completion: @escaping (Result<UIImage, APIError>) -> Void) {
         if let url = URL(string: url) {
             apiClient.executeService(request: HTTPRequest(url: url, method: .GET, body: nil, headers: nil)) { result in
-                switch result {
-                case .success(let data):
-                    if let image = UIImage(data: data) {
-                        completion(.success(image))
-                    } else {
-                        completion(.failure(.invalidData))
+                DispatchQueue.main.sync {
+                    switch result {
+                    case .success(let data):
+                        if let image = UIImage(data: data) {
+                            completion(.success(image))
+                        } else {
+                            completion(.failure(.invalidData))
+                        }
+                    case .failure(let error):
+                        completion(.failure(error))
                     }
-                case .failure(let error):
-                    completion(.failure(error))
                 }
             }
         } else {
