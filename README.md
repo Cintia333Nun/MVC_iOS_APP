@@ -20,3 +20,6 @@ Orientation App,<br/>
 # Preview App:
 <img width="363" alt="Captura de pantalla 2023-11-17 a la(s) 5 05 45 p m" src="https://github.com/Cintia333Nun/MVC_iOS_APP/assets/55222275/16897acb-26a2-4596-b34e-ae0c4f555565">
 <img width="345" alt="Captura de pantalla 2023-11-21 a la(s) 3 10 37 p m" src="https://github.com/Cintia333Nun/MVC_iOS_APP/assets/55222275/659c6125-90cf-4f0e-865c-c6f6ecf8ce1c">
+
+![movies](https://github.com/Cintia333Nun/MVC_iOS_APP/assets/55222275/024378e9-e3b4-4f1c-9e75-1913ae31feaf)
+![data_movie](https://github.com/Cintia333Nun/MVC_iOS_APP/assets/55222275/a444535c-c7ee-4314-bc6b-bccd936a5f61)
